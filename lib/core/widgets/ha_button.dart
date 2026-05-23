@@ -80,11 +80,16 @@ class HaButton extends StatelessWidget {
                 icon!,
                 const SizedBox(width: AppDimensions.spacingS),
               ],
-              Text(
-                text,
-                style: type == HaButtonType.primary
-                    ? AppTextStyles.buttonLarge.copyWith(color: AppColors.white)
-                    : AppTextStyles.buttonLarge.copyWith(color: AppColors.gold),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    text,
+                    style: type == HaButtonType.primary
+                        ? AppTextStyles.buttonLarge.copyWith(color: AppColors.white)
+                        : AppTextStyles.buttonLarge.copyWith(color: AppColors.gold),
+                  ),
+                ),
               ),
             ],
           );

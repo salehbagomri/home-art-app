@@ -10,7 +10,6 @@ import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/ha_app_bar.dart';
 import '../../../../core/widgets/ha_button.dart';
 import '../../../../core/widgets/ha_loading.dart';
-import '../../../../core/widgets/ha_card.dart';
 import '../bloc/product_details_cubit.dart';
 import '../bloc/product_details_state.dart';
 
@@ -108,7 +107,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     return Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                       decoration: BoxDecoration(
-                                        color: AppColors.nightBrown.withOpacity(0.7),
+                                        color: AppColors.nightBrown.withValues(alpha: 0.7),
                                         borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                                       ),
                                       child: Text(

@@ -83,7 +83,7 @@ class ProfileScreen extends StatelessWidget {
                                     Container(
                                       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                       decoration: BoxDecoration(
-                                        color: AppColors.gold.withOpacity(0.15),
+                                        color: AppColors.gold.withValues(alpha: 0.15),
                                         borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                                       ),
                                       child: Row(
@@ -151,7 +151,7 @@ class ProfileScreen extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                 decoration: BoxDecoration(
-                                  color: AppColors.gold.withOpacity(0.2),
+                                  color: AppColors.gold.withValues(alpha: 0.2),
                                   borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                                 ),
                                 child: Text(
@@ -313,7 +313,7 @@ class ProfileScreen extends StatelessWidget {
                                         top: 4,
                                         left: 4,
                                         child: Container(
-                                          decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.white.withOpacity(0.9)),
+                                          decoration: BoxDecoration(shape: BoxShape.circle, color: AppColors.white.withValues(alpha: 0.9)),
                                           padding: const EdgeInsets.all(4),
                                           child: const Icon(Icons.favorite, color: AppColors.error, size: 12),
                                         ),
@@ -375,7 +375,7 @@ class ProfileScreen extends StatelessWidget {
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                 decoration: BoxDecoration(
-                                  color: AppColors.guaranteeGreen.withOpacity(0.12),
+                                  color: AppColors.guaranteeGreen.withValues(alpha: 0.12),
                                   borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                                 ),
                                 child: Text(
@@ -387,7 +387,7 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                       );
-                    }).toList(),
+                    }),
                     const SizedBox(height: AppDimensions.spacingXL),
 
                     // 7. Notification Preference Card

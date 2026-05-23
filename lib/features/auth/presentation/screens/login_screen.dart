@@ -329,8 +329,8 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
 
                             // Faint divider for Social buttons
                             const SizedBox(height: AppDimensions.spacingXL),
-                            Row(
-                              children: const [
+                            const Row(
+                              children: [
                                 Expanded(child: Divider()),
                                 Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -382,7 +382,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                       padding: const EdgeInsets.all(AppDimensions.paddingM),
                       child: Text.rich(
                         TextSpan(
-                          text: AppStrings.agreeTerms + ' ',
+                          text: '${AppStrings.agreeTerms} ',
                           style: AppTextStyles.caption,
                           children: [
                             TextSpan(

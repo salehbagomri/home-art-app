@@ -114,12 +114,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                   image: AssetImage(banner['image']!),
                                   fit: BoxFit.cover,
                                   colorFilter: ColorFilter.mode(
-                                    AppColors.nightBrown.withOpacity(0.55),
+                                    AppColors.nightBrown.withValues(alpha: 0.55),
                                     BlendMode.darken,
                                   ),
                                 ),
                               ),
-                              padding: const EdgeInsets.all(AppDimensions.paddingXL),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: AppDimensions.paddingXL,
+                                vertical: AppDimensions.paddingM,
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -221,7 +224,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: AppDimensions.screenPaddingH),
                         child: HaSectionHeader(
-                          title: '✦ ' + AppStrings.inspireMe,
+                          title: '✦ ${AppStrings.inspireMe}',
                           onViewAll: () => context.go(AppRoutes.inspiration),
                         ),
                       ),
@@ -254,7 +257,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       end: Alignment.bottomCenter,
                                       colors: [
                                         Colors.transparent,
-                                        AppColors.black.withOpacity(0.7),
+                                        AppColors.black.withValues(alpha: 0.7),
                                       ],
                                     ),
                                   ),
@@ -349,7 +352,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                       ),
                                     );
-                                  }).toList(),
+                                  }),
                                 ],
                               ),
                             ),
@@ -434,7 +437,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Container(
                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                                   decoration: BoxDecoration(
-                                    color: AppColors.gold.withOpacity(0.12),
+                                    color: AppColors.gold.withValues(alpha: 0.12),
                                     borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                                   ),
                                   child: Text(

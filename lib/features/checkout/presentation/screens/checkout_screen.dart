@@ -10,7 +10,6 @@ import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/ha_app_bar.dart';
 import '../../../../core/widgets/ha_card.dart';
 import '../../../../core/widgets/ha_button.dart';
-import '../../../../core/widgets/ha_loading.dart';
 import '../bloc/checkout_bloc.dart';
 import '../bloc/checkout_event.dart';
 import '../bloc/checkout_state.dart';
@@ -317,19 +316,27 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
 
                         // Payment Methods
                         HaCard(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(AppStrings.paymentMethodLabel, style: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.bold)),
-                              const SizedBox(height: AppDimensions.spacingM),
-                              _buildPaymentRadio(context, 'mada', AppStrings.mada, Iconsax.card, state.paymentMethod),
-                              const Divider(height: 12),
-                              _buildPaymentRadio(context, 'visa', AppStrings.visa, Iconsax.wallet_money, state.paymentMethod),
-                              const Divider(height: 12),
-                              _buildPaymentRadio(context, 'applePay', AppStrings.applePay, Iconsax.mobile, state.paymentMethod),
-                              const Divider(height: 12),
-                              _buildPaymentRadio(context, 'tamara', AppStrings.tamara, Iconsax.direct_send, state.paymentMethod),
-                            ],
+                          child: RadioGroup<String>(
+                            groupValue: state.paymentMethod,
+                            onChanged: (val) {
+                              if (val != null) {
+                                context.read<CheckoutBloc>().add(SetPaymentMethod(val));
+                              }
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(AppStrings.paymentMethodLabel, style: AppTextStyles.bodyMedium.copyWith(fontWeight: FontWeight.bold)),
+                                const SizedBox(height: AppDimensions.spacingM),
+                                _buildPaymentRadio(context, 'mada', AppStrings.mada, Iconsax.card, state.paymentMethod),
+                                const Divider(height: 12),
+                                _buildPaymentRadio(context, 'visa', AppStrings.visa, Iconsax.wallet_money, state.paymentMethod),
+                                const Divider(height: 12),
+                                _buildPaymentRadio(context, 'applePay', AppStrings.applePay, Iconsax.mobile, state.paymentMethod),
+                                const Divider(height: 12),
+                                _buildPaymentRadio(context, 'tamara', AppStrings.tamara, Iconsax.direct_send, state.paymentMethod),
+                              ],
+                            ),
                           ),
                         ),
                         const SizedBox(height: AppDimensions.spacingXXL),
@@ -362,9 +369,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                         },
                       ),
                       const SizedBox(height: 8),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Icon(Iconsax.shield_tick, size: 14, color: AppColors.guaranteeGreen),
                           SizedBox(width: 4),
                           Text(
@@ -413,13 +420,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           children: [
             Radio<String>(
               value: value,
-              groupValue: groupValue,
               activeColor: AppColors.gold,
-              onChanged: (val) {
-                if (val != null) {
-                  context.read<CheckoutBloc>().add(SetPaymentMethod(val));
-                }
-              },
             ),
             const SizedBox(width: 8),
             Icon(icon, color: isSelected ? AppColors.gold : AppColors.woodBrown, size: 20),

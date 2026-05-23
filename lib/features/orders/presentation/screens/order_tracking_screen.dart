@@ -103,7 +103,7 @@ class OrderTrackingScreen extends StatelessWidget {
                           Container(
                             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                             decoration: BoxDecoration(
-                              color: statusColor.withOpacity(0.12),
+                              color: statusColor.withValues(alpha: 0.12),
                               borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                             ),
                             child: Text(
@@ -297,7 +297,7 @@ class OrderTrackingScreen extends StatelessWidget {
                           ),
                         ),
                       );
-                    }).toList(),
+                    }),
                     const SizedBox(height: AppDimensions.spacingM),
 
                     // Two Split Cards

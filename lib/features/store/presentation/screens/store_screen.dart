@@ -6,7 +6,6 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_dimensions.dart';
 import '../../../../core/theme/app_text_styles.dart';
 import '../../../../core/constants/app_strings.dart';
-import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/ha_app_bar.dart';
 import '../../../../core/widgets/ha_search_bar.dart';
 import '../../../../core/widgets/ha_card.dart';
@@ -117,19 +116,22 @@ class _StoreScreenState extends State<StoreScreen> {
                         const SizedBox(height: AppDimensions.spacingM),
 
                         // Sort Row
-                        Row(
-                          children: [
-                            Text(
-                              '${AppStrings.sortBy}: ',
-                              style: AppTextStyles.bodySmall.copyWith(fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(width: AppDimensions.spacingS),
-                            _buildSortChip(context, AppStrings.newest, 'الأحدث', state.activeSort),
-                            const SizedBox(width: AppDimensions.spacingS),
-                            _buildSortChip(context, AppStrings.bestSelling, 'الأكثر مبيعاً', state.activeSort),
-                            const SizedBox(width: AppDimensions.spacingS),
-                            _buildSortChip(context, 'السعر', 'السعر', state.activeSort),
-                          ],
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: [
+                              Text(
+                                '${AppStrings.sortBy}: ',
+                                style: AppTextStyles.bodySmall.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(width: AppDimensions.spacingS),
+                              _buildSortChip(context, AppStrings.newest, 'الأحدث', state.activeSort),
+                              const SizedBox(width: AppDimensions.spacingS),
+                              _buildSortChip(context, AppStrings.bestSelling, 'الأكثر مبيعاً', state.activeSort),
+                              const SizedBox(width: AppDimensions.spacingS),
+                              _buildSortChip(context, 'السعر', 'السعر', state.activeSort),
+                            ],
+                          ),
                         ),
                         const SizedBox(height: AppDimensions.spacingM),
 
@@ -272,7 +274,7 @@ class _StoreScreenState extends State<StoreScreen> {
                                     child: Container(
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        color: AppColors.white.withOpacity(0.85),
+                                        color: AppColors.white.withValues(alpha: 0.85),
                                       ),
                                       child: IconButton(
                                         icon: Icon(
@@ -319,7 +321,7 @@ class _StoreScreenState extends State<StoreScreen> {
                                           padding: const EdgeInsets.all(6),
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color: AppColors.gold.withOpacity(0.1),
+                                            color: AppColors.gold.withValues(alpha: 0.1),
                                           ),
                                           child: const Icon(
                                             Iconsax.bag_2,

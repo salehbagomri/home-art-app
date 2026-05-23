@@ -10,7 +10,6 @@ import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/ha_app_bar.dart';
 import '../../../../core/widgets/ha_button.dart';
 import '../../../../core/widgets/ha_card.dart';
-import '../../../../core/widgets/ha_loading.dart';
 import '../bloc/custom_design_bloc.dart';
 import '../bloc/custom_design_event.dart';
 import '../bloc/custom_design_state.dart';
@@ -243,9 +242,9 @@ class _CustomDesignScreenState extends State<CustomDesignScreen> {
                           ],
                         ),
                         const SizedBox(height: 8),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Icon(Iconsax.lock, size: 14, color: AppColors.subtleText),
                             SizedBox(width: 4),
                             Text(
@@ -364,9 +363,9 @@ class _CustomDesignScreenState extends State<CustomDesignScreen> {
                 borderRadius: BorderRadius.circular(AppDimensions.radiusM),
                 color: AppColors.white,
               ),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(Iconsax.camera, color: AppColors.gold, size: 24),
                   SizedBox(height: 4),
                   Text('إضافة صورة', style: TextStyle(fontSize: 10, color: AppColors.gold)),
@@ -546,7 +545,7 @@ class _CustomDesignScreenState extends State<CustomDesignScreen> {
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: AppColors.black.withOpacity(0.5),
+                    color: AppColors.black.withValues(alpha: 0.5),
                     borderRadius: BorderRadius.circular(AppDimensions.radiusM - 2),
                   ),
                   child: Text(

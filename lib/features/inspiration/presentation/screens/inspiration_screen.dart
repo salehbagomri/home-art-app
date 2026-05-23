@@ -9,7 +9,6 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/constants/app_routes.dart';
 import '../../../../core/widgets/ha_app_bar.dart';
 import '../../../../core/widgets/ha_search_bar.dart';
-import '../../../../core/widgets/ha_card.dart';
 import '../../../../core/widgets/ha_loading.dart';
 import '../../../../core/widgets/ha_button.dart';
 import '../bloc/inspiration_cubit.dart';
@@ -181,9 +180,9 @@ class _InspirationScreenState extends State<InspirationScreen> {
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
                                 colors: [
-                                  Colors.black.withOpacity(0.2),
+                                  Colors.black.withValues(alpha: 0.2),
                                   Colors.transparent,
-                                  Colors.black.withOpacity(0.75),
+                                  Colors.black.withValues(alpha: 0.75),
                                 ],
                               ),
                             ),
@@ -203,7 +202,7 @@ class _InspirationScreenState extends State<InspirationScreen> {
                                         padding: const EdgeInsets.all(6),
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: AppColors.white.withOpacity(0.3),
+                                          color: AppColors.white.withValues(alpha: 0.3),
                                         ),
                                         child: Icon(
                                           isSaved ? Iconsax.archive_book : Iconsax.archive_book,
@@ -220,7 +219,7 @@ class _InspirationScreenState extends State<InspirationScreen> {
                                         padding: const EdgeInsets.all(6),
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
-                                          color: AppColors.white.withOpacity(0.3),
+                                          color: AppColors.white.withValues(alpha: 0.3),
                                         ),
                                         child: Icon(
                                           isLiked ? Iconsax.heart : Iconsax.heart,
@@ -262,7 +261,7 @@ class _InspirationScreenState extends State<InspirationScreen> {
                     decoration: BoxDecoration(
                       color: AppColors.nightBrown,
                       border: Border(
-                        top: BorderSide(color: AppColors.cardBorder.withOpacity(0.1)),
+                        top: BorderSide(color: AppColors.cardBorder.withValues(alpha: 0.1)),
                       ),
                     ),
                     child: Row(

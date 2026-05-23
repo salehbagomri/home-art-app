@@ -1,5 +1,4 @@
 import 'package:go_router/go_router.dart';
-import 'package:flutter/material.dart';
 import '../features/main/presentation/screens/main_shell.dart';
 import '../features/splash/presentation/splash_screen.dart';
 import '../features/auth/presentation/screens/login_screen.dart';

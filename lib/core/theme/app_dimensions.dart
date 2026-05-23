@@ -26,7 +26,7 @@ class AppDimensions {
   static const double buttonHeight = 56.0;
   static const double buttonHeightSmall = 44.0;
   static const double appBarHeight = 60.0;
-  static const double bottomNavHeight = 70.0;
+  static const double bottomNavHeight = 80.0;
   static const double searchBarHeight = 48.0;
   static const double inputFieldHeight = 52.0;
 
@@ -55,7 +55,7 @@ class AppDimensions {
   static const double productCardWidth = 170.0;
 
   // === Banner ===
-  static const double bannerHeight = 200.0;
+  static const double bannerHeight = 230.0;
 
   // === Category Item ===
   static const double categoryIconSize = 48.0;

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_dimensions.dart';
@@ -111,7 +110,7 @@ class SupportScreen extends StatelessWidget {
                           image: const AssetImage('App_Assets/3.jpeg'),
                           fit: BoxFit.cover,
                           colorFilter: ColorFilter.mode(
-                            AppColors.nightBrown.withOpacity(0.5),
+                            AppColors.nightBrown.withValues(alpha: 0.5),
                             BlendMode.darken,
                           ),
                         ),
@@ -175,7 +174,7 @@ class SupportScreen extends StatelessWidget {
                                   Container(
                                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                                     decoration: BoxDecoration(
-                                      color: statusColor.withOpacity(0.12),
+                                      color: statusColor.withValues(alpha: 0.12),
                                       borderRadius: BorderRadius.circular(AppDimensions.radiusRound),
                                     ),
                                     child: Text(
@@ -212,7 +211,7 @@ class SupportScreen extends StatelessWidget {
                           ),
                         ),
                       );
-                    }).toList(),
+                    }),
                     const SizedBox(height: AppDimensions.spacingXL),
 
                     // Live Chat Card
