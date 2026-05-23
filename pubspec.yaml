@@ -46,8 +46,8 @@ flutter_launcher_icons:
   android: true
   ios: false
   image_path: "App_Assets/logo/homeart-logo-dark.png"
-  adaptive_icon_background: "#17130F"
-  adaptive_icon_foreground: "App_Assets/logo/homeart-logo-lite1.png"
+  adaptive_icon_background: "#F4EFE5"
+  adaptive_icon_foreground: "App_Assets/logo/homeart-logo-dark.png"
 
 # Splash Screen Configuration
 flutter_native_splash:
